@@ -42,4 +42,4 @@ const location = useLocation();
     )
 }
 
-export default {MovieTrends}
+export default MovieTrends

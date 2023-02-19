@@ -8,6 +8,8 @@ import MovieTrends from '../MovieTrends/MovieTrends'
 
     return (
         <div>
+         
+            
             <h1>TRENDING TODEY</h1>
             < MovieTrends />
         </div>

@@ -13,4 +13,4 @@ import MovieTrends from '../MovieTrends/MovieTrends'
         </div>
     )
 }
- export default Home
+ export  default  Home

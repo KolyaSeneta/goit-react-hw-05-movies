@@ -1,25 +1,44 @@
 import { useEffect, useState } from 'react';
-import {getTranding} from '../../services/services'
+import {getTrending} from '../../services/services'
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Link, useLocation } from "react-router-dom"
 
 const MovieTrends = () => {
-       const [movies, setMovies] = useState([])
+       const [movie, setMovie] = useState([])
 
       
 //     const handleAddMovie = (movie) => {
 //         setMovie((prev) => ({  moviesList:[...prev.moviesList, movie]
 //      }))
 //  }
+     
     useEffect(() => {
-        console.log(getTranding()); 
-        
- },[])
+    const fetchMovie = async () => {
+      try {
+        const data = await getTrending();
+        if (data.results.length) {
+          setMovie(data.results);
+        }
+      } catch (error) {
+        console.log(error);
+        Notify.failed('There is no such film yet');
+      }
+    };
+    fetchMovie();
+  }, []);
+    
 
-    return (
-        <>
-            <ul>
-              { movies.map(movie =>(<li key={movie}></li>) )}
-            </ul>
-        </>
+const location = useLocation();
+    return(
+        <ul>
+        {movie.map(item => (
+          <li key={item.id}>
+            <Link state={{ from: location }} to={`/movies/${item.id}`}>
+              {item.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
     )
 }
 

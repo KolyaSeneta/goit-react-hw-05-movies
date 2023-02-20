@@ -20,9 +20,9 @@ export const getTrending = async () => {
   return data;
 };
 
-export const getSearch  = async params => {
-  const { data } = await MovieApi.get('/search/movie', { params });
-  return data;
+export const getSearch  = async query => {
+  const { data } = await MovieApi.get('/search/movie', { params: { query } });
+  return data.results;
 };
 
 export const getDetails  = async id => {

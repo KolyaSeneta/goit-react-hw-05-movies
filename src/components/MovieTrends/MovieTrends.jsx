@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import {getTrending} from '../../services/services'
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { Link, useLocation } from "react-router-dom"
+import {MovieItem} from '../MovieItem/MovieItem'
 
 const MovieTrends = () => {
-       const [movie, setMovie] = useState([])
+      //  const [movie, setMovie] = useState([])
+  const [trendsMovie, setTrendsMovie] = useState([])
 
       
 //     const handleAddMovie = (movie) => {
@@ -17,7 +18,7 @@ const MovieTrends = () => {
       try {
         const data = await getTrending();
         if (data.results.length) {
-          setMovie(data.results);
+          setTrendsMovie(data.results);
         }
       } catch (error) {
         console.log(error);
@@ -28,15 +29,11 @@ const MovieTrends = () => {
   }, []);
     
 
-const location = useLocation();
+
     return(
         <ul>
-        {movie.map(item => (
-          <li key={item.id}>
-            <Link state={{ from: location }} to={`/movies/${item.id}`}>
-              {item.title}
-            </Link>
-          </li>
+        {trendsMovie.map(movie => (
+          <MovieItem  key={movie.id} movie={movie}/>
         ))}
       </ul>
     )

@@ -1,7 +1,7 @@
 
 
 
-import MovieTrends from '../MovieTrends/MovieTrends'
+import MovieTrends from '../../MovieTrends/MovieTrends'
 
  const Home = () => {
      

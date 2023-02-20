@@ -1,0 +1,33 @@
+
+.goBack {
+    background-color: #4CAF50; // колір фону
+    color: white; // колір тексту
+    padding: 10px 20px; // відступи тексту від межі кнопки
+    text-align: center; // вирівнювання тексту по центру
+    text-decoration: none; // відмінити підкреслення тексту
+    display: inline-block; // встановити блочний вигляд для кнопки
+    font-size: 16px; // розмір шрифту
+    border: none; // відмінити межу кнопки
+    border-radius: 5px; // закругленість куточків кнопки
+
+    &:hover {
+        background-color: #3e8e41; // колір фону при наведенні курсору
+    }
+
+    &:active {
+        background-color: #4CAF50; // колір фону при натисканні
+        box-shadow: 0 5px #666; // тінь при натисканні
+        transform: translateY(4px); // зсув кнопки при натисканні
+    }
+
+    transition-duration: 0.4s; // тривалість переходу
+
+    &.bordered {
+        border: 2px solid #4CAF50; // колір і товщина межі
+        border-radius: 5px; // закругленість куточків кнопки
+    }
+
+    &.shadowed {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2); // тінь
+    }
+}

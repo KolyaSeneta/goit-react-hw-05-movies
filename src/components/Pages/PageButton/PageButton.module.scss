@@ -1,0 +1,48 @@
+
+.container{
+    background-color: #333; // колір фону заголовка
+        color: #fff; // колір тексту заголовка
+        display: flex; // встановити гнучкий вигляд для елементів заголовка
+        justify-content: space-between; // вирівняти елементи по горизонталі зі зміщенням
+        align-items: center; // вирівняти елементи по вертикалі зі зміщенням
+        padding: 10px; // відступи заголовка від межі екрану
+}
+  .buttons {
+      display: flex; // встановити гнучкий вигляд для елементів кнопок
+      align-items: center; // вирівняти елементи по вертикалі зі зміщенням
+  }
+  .btn {
+      background-color: #4CAF50; // колір фону для кнопок
+      color: white; // колір тексту для кнопок
+      padding: 10px 20px; // відступи тексту від межі кнопок
+      text-align: center; // вирівнювання тексту по центру
+      text-decoration: none; // відмінити підкреслення тексту
+      display: inline-block; // встановити блочний вигляд для кнопок
+      font-size: 16px; // розмір шрифту для кнопок
+      border: none; // відмінити межу кнопок
+      border-radius: 5px; // закругленість куточків кнопок
+      margin-left: 10px; // відступ між кнопками
+
+      &:hover {
+          background-color: #3e8e41; // колір фону при наведенні курсору
+      }
+
+      &:active {
+          background-color: #4CAF50; // колір фону при натисканні
+          box-shadow: 0 5px #666; // тінь при натисканні
+          transform: translateY(4px); // зсув кнопки при натисканні
+      }
+
+      transition-duration: 0.4s; // тривалість переходу
+
+      &.bordered {
+          border: 2px solid #4CAF50; // колір і товщина межі
+          border-radius: 5px; // закругленість куточків кнопок
+      }
+
+      &.shadowed {
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2); // тінь
+      }
+  }
+  
+ 

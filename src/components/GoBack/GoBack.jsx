@@ -1,12 +1,16 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
+import css from '../GoBack/goBack.module.scss'
 
 
 
-
-export const GoBack = () => {
-
+const GoBack = () => {
+const location = useLocation()
 
     return (
-        <Link to="/">Go Back</Link>
+        <div className="">
+            <Link className={css.goBack} to={location.state?.from ?? "/"} >Go Back</Link>
+            </div>
     )
 }
+
+export default GoBack

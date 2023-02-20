@@ -1,16 +1,16 @@
-
-
+import PageSearch from "../PageSearch/PageSearch"
 
 
 const Movies = () => {
-
-
+ 
+    
 
 
     return (
-        <div>
-          
-        </div>
+        <>
+      
+            <PageSearch />
+            </>
     )
 }
 
